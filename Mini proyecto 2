@@ -1,0 +1,67 @@
+# PIEDRA - PAPEL - TIJERA 
+import random 
+
+print("BIENVENIDO AL JUEGO PIEDRA - PAPEL - TIJERA!!: \n"
++"Usted esta jugando contra la computadora, MUCHA SUERTE!! :D \n"
++"Las reglas del juego son: \n"
++"Piedra vs Papel -> Gana Papel \n"
++"Piedra vs Tijera -> Gana Piedra \n"
++"Papel vs Tijera -> Gana Tijera \n") 
+  
+while True: 
+    print("Escoge una opcion \n 1 -> Piedra \n 2 -> Papel \n 3 -> Tijera \n") 
+      
+    opc = int(input("Tu turno: ")) 
+          
+    if opc == 1: 
+        eleccion = "Piedra"
+    elif opc == 2: 
+        eleccion = "Papel"
+    elif opc == 3: 
+        eleccion = "Tijera"
+    else: 
+        opc = int(input("El valor ingresado es incorrecto, intente de nuevo: ")) 
+          
+    print("\nUsted eligio: " +eleccion) 
+    
+    opc_compu = random.randint(1, 3) 
+    
+    while opc_compu == opc: 
+        opc_compu = random.randint(1, 3) 
+  
+    if opc_compu == 1: 
+        eleccion_compu = "Piedra"
+    elif opc_compu == 2: 
+        eleccion_compu = "Papel"
+    else: 
+        eleccion_compu = "Tijera"
+          
+    print("La computadora eligio: " +eleccion_compu) 
+  
+    print(eleccion+ " vs " +eleccion_compu) 
+  
+    if((opc == 1 and opc_compu == 2) or
+      (opc == 2 and opc_compu == 1 )): 
+        print("\nGana Papel", end = "") 
+        resultado = "Papel"
+          
+    elif((opc == 1 and opc_compu == 3) or
+        (opc == 3 and opc_compu == 1)): 
+        print("\nGana Piedra", end = "") 
+        resultado = "Piedra"
+    else: 
+        print("\nGana Tijera", end = "") 
+        resultado = "Tijera"
+  
+    if resultado == eleccion: 
+        print(" \nFELICIDADES - USTED GANO!! :D") 
+    else: 
+        print(" \nLA COMPUTADORA GANO :(") 
+          
+    print("\nDesea seguir jugando? ENTER -> SI  N/n -> NO") 
+    salida = input() 
+  
+    if salida == 'n' or salida == 'N': 
+        break
+
+print("\nGracias por haber jugado, vuelva pronto!! ;)") 
